@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new task</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add new task for today</h1>
+        <form method="post" action="/tasks">
+            <input name="title" placeholder="Enter the task title" type="text" required>
+            <textarea name="description" placeholder="Add details about the task" rows="4"></textarea>
+            <select name="status">
+                <option value="pending">Pending</option>
+                <option value="Inprocess">In-Process</option>
+                <option value="completed">Completed</option>
+            </select>
+            <button type="submit">Create Task</button>
+        </form>
+    </div>
+</body>
+
+</html>

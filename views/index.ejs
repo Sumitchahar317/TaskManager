@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Task</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>My Tasks Dashboard</h1>
+            <a href="/tasks/new" class="btn">Add New Task</a>
+        </header>
+
+        <div class="task-list">
+            <% if (tasks.length===0) { %>
+                <p>No tasks found!! Add some new tasks .... </p>
+                <% } else { %>
+                    <% for (let task of tasks) { %>
+                        <div class="task-card">
+                            <h3>
+                                <%= task.title %>
+                            </h3>
+                            <p>
+                                <%= task.description %>
+                            </p>
+                            <div class="card-footer">
+                                <span class="status-badge">
+                                    <%= task.status %>
+                                </span>
+                                <form method="post" action="/tasks/<%= task._id %>">
+                                    <button class="btn-delete">Delete Task</button>
+                                </form>
+
+                            </div>
+
+                        </div>
+                        <% } %>
+                    <% } %>
+        </div>
+    </div>
+
+</body>
+
+</html>
